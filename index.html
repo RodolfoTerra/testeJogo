@@ -5,12 +5,85 @@
 		<link rel="stylesheet" href="web/includes/bootstrap3.3.7/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="web/css/style.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="shortcut icon" href="img/favicon.png">
+        <link rel="shortcut icon" href="web/img/favicon.png">
 	</head>
 	<body>
-		
+        <div class="preloader" id="preloader">
+            <div class="status" id="status"></div>
+        </div>
 
-		<script src="web/includes/bootstrap3.3.7/js/npm.js"></script>
+		<div class="bs-example" data-example-id="inverted-navbar"> 
+			<nav class="navbar navbar-inverse"> 
+				<div class="container-fluid"> 
+					<div class="navbar-header"> 
+						<button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-0" aria-expanded="false"> 
+							<span class="sr-only">Toggle navigation</span> 
+							<span class="icon-bar"></span> 
+							<span class="icon-bar"></span> 
+							<span class="icon-bar"></span> 
+						</button> 
+						<a href="/" class="navbar-brand">Avaliação Hands-on</a>
+					</div> 
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-0"> 
+						<ul class="nav navbar-nav"> 
+							<li class="" id="inicio"><!-- active -->
+								<a href="#" onclick="Comecar();">Começar</a>
+							</li> 
+						</ul>
+					</div> 
+				</div> 
+			</nav> 
+		</div>
+
+		<div class="container">
+			<div class="jumbotron hidden" id="comecar">
+			    <div class="container">
+
+					<div class="row col-md-12">
+						<h3>
+							<strong>ID do mistério:</strong>
+							<span class="input-addon" id="idCrime"></span>
+						</h3>
+						
+					</div>
+					
+					<hr>
+
+				    <div class="form-group col-md-4 com-sm-12">
+				        <label for="suspeito">Suspeito</label>
+				        <select id="suspeito" class="form-control">
+				        	<option value="0">Selecione</option>
+				        </select>
+				    </div>
+
+				    <div class="form-group col-md-4 com-sm-12">
+				        <label for="local">Local</label>
+				        <select id="local" class="form-control">
+				        	<option value="0">Selecione</option>
+				        </select>
+				    </div>
+
+				    <div class="form-group col-md-4 com-sm-12">
+				        <label for="arma">Arma</label>
+				        <select id="arma" class="form-control">
+				        	<option value="0">Selecione</option>
+				        </select>
+				    </div>
+			    	
+
+			    	<div class="row col-md-12 text-center">
+			    		<button type="button" class="btn btn-primary btn-lg" onclick="postTeoria();">Verificar Teoria</button>
+			    	</div>
+			    </div>
+			</div>
+
+			<div class="bemvindo text-center">
+				<h1>Bem Vindo!</h1>
+			</div>
+		</div>	
+
+		<script src="web/includes/jquery3.2.1/jquery.min.js"></script>
 		<script src="web/includes/bootstrap3.3.7/js/bootstrap.min.js"></script>
+		<script src="web/js/main.js"></script>
 	</body>
 </html>

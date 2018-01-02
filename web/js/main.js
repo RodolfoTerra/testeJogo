@@ -88,33 +88,34 @@ function postTeoria(){
 		arma 		= $('#arma').val(),
 		idMisterio 	= idCrime,
 		vUrl		= "http://handson.eniwine.com.br/api/descubraoassassino/",
+        resultado   = ""; 
 		vData = {IdSuspeito:suspeito, IdArma:arma, IdLocal:local, IdMisterio:idMisterio};
 
 	$.post(vUrl, vData, function( data ) {
 	    
         switch(data) {
             case 1:
-                var resultado = "somente o assassino está incorreto !";
+                resultado = "somente o assassino está incorreto !";
                 $('#resultado').removeClass('hidden')
-                $('.resultado').text(resultado);
+                $('.resposta').text(resultado);
                 break;
 
             case 2:
-                var resultado = "todos estão incorretos !";
+                resultado = "todos estão incorretos !";
                 $('#resultado').removeClass('hidden')
-                $('.resultado').text(resultado);
+                $('.resposta').text(resultado);
                 break;
 
             case 3:
-                var resultado = "somente o local está correto !";
+                resultado = "somente o local está correto !";
                 $('#resultado').removeClass('hidden')
-                $('.resultado').text(resultado);
+                $('.resposta').text(resultado);
                 break;
 
             case 0:
-                var resultado = "caso solucionado !";
+                resultado = "caso solucionado !";
                 $('#resultado').removeClass('hidden')
-                $('.resultado').text(resultado);
+                $('.resposta').text(resultado);
                 break;
         }        
 

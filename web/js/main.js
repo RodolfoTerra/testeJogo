@@ -20,7 +20,7 @@ function Inicio(){
 
 
 function getId(){
-	$.get( "https://handson.eniwine.com.br/api/descubraoassassino", function(data) {	
+	$.get( "http://handson.eniwine.com.br/api/descubraoassassino", function(data) {	
 
         var obj = JSON.parse(data);
         
@@ -34,7 +34,7 @@ function getId(){
 
 
 function getSuspeito(){
-	$.get( "https://handson.eniwine.com.br/api/descubraoassassino/criminosos", function(data) {
+	$.get( "http://handson.eniwine.com.br/api/descubraoassassino/criminosos", function(data) {
 
         var obj = JSON.parse(data);
 
@@ -48,7 +48,7 @@ function getSuspeito(){
 
 
 function getLocal(){
-	$.get( "https://handson.eniwine.com.br/api/descubraoassassino/locais", function(data) {
+	$.get( "http://handson.eniwine.com.br/api/descubraoassassino/locais", function(data) {
 
         var obj = JSON.parse(data);
 
@@ -62,7 +62,7 @@ function getLocal(){
 
 
 function getArma(){
-	$.get( "https://handson.eniwine.com.br/api/descubraoassassino/armas", function(data) {
+	$.get( "http://handson.eniwine.com.br/api/descubraoassassino/armas", function(data) {
 
         var obj = JSON.parse(data);
 
@@ -87,11 +87,37 @@ function postTeoria(){
 		local 		= $('#local').val(),
 		arma 		= $('#arma').val(),
 		idMisterio 	= idCrime,
-		vUrl		= "https://handson.eniwine.com.br/api/descubraoassassino/",
+		vUrl		= "http://handson.eniwine.com.br/api/descubraoassassino/",
 		vData = {IdSuspeito:suspeito, IdArma:arma, IdLocal:local, IdMisterio:idMisterio};
 
 	$.post(vUrl, vData, function( data ) {
-	    alert("Resultado" + data);
+	    
+        switch(data) {
+            case 1:
+                var resultado = "somente o assassino está incorreto !";
+                $('#resultado').removeClass('hidden')
+                $('.resultado').text(resultado);
+                break;
+
+            case 2:
+                var resultado = "todos estão incorretos !";
+                $('#resultado').removeClass('hidden')
+                $('.resultado').text(resultado);
+                break;
+
+            case 3:
+                var resultado = "somente o local está correto !";
+                $('#resultado').removeClass('hidden')
+                $('.resultado').text(resultado);
+                break;
+
+            case 0:
+                var resultado = "caso solucionado !";
+                $('#resultado').removeClass('hidden')
+                $('.resultado').text(resultado);
+                break;
+        }        
+
 	});
 
 }

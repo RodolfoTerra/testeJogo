@@ -39,6 +39,12 @@
 			<div class="jumbotron hidden" id="comecar">
 			    <div class="container">
 
+					<div class="col-md-12 hidden" id="resultado">
+						<div class="alert alert-success" role="alert">
+						  <span class="resposta">teste</span>
+						</div>				
+					</div>
+
 					<div class="row col-md-12">
 						<h3>
 							<strong>ID do mistério:</strong>
@@ -48,7 +54,6 @@
 					</div>
 					
 					<hr>
-
 				    <div class="form-group col-md-4 com-sm-12">
 				        <label for="suspeito">Suspeito</label>
 				        <select id="suspeito" class="form-control">
@@ -68,8 +73,8 @@
 				        <select id="arma" class="form-control">
 				        	<option value="0">Selecione</option>
 				        </select>
-				    </div>
-			    	
+				    </div>			    	
+
 
 			    	<div class="row col-md-12 text-center">
 			    		<button type="button" class="btn btn-primary btn-lg" onclick="postTeoria();">Verificar Teoria</button>
@@ -81,6 +86,7 @@
 				<h1>Bem Vindo!</h1>
 				<h3>Clique em começar</h3>
 			</div>
+
 		</div>	
 
 		<script src="web/includes/jquery3.2.1/jquery.min.js"></script>
